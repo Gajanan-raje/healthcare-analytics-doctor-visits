@@ -1,58 +1,70 @@
-# Healthcare Analytics for Doctor Visits
+<h1 align="center">🏥 Healthcare Analytics for Doctor Visits</h1>
 
-**Data Analytics DIY Project | VOIS For Tech, AICTE TIRTC (August Batch, 2026-27)**
+<p align="center">
+  <b>Which factors decide how often a patient visits a doctor?</b><br>
+  An end-to-end data analytics project in Python on 5,190 patient records
+</p>
 
-| | |
-|---|---|
-| **Author** | Gajanan Harinarayan Raje |
-| **Course** | TYBCA (Third Year Bachelor of Computer Applications) |
-| **College** | MGM's College of Computer Science & IT, Nanded |
-| **University** | Swami Ramanand Teerth Marathwada University (SRTMU) |
-| **Tools** | Python, Pandas, NumPy, Matplotlib, Seaborn, Google Colab |
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.x-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
+  <img src="https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white" alt="Pandas">
+  <img src="https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white" alt="NumPy">
+  <img src="https://img.shields.io/badge/Matplotlib-11557C?style=for-the-badge" alt="Matplotlib">
+  <img src="https://img.shields.io/badge/Seaborn-4C8CBF?style=for-the-badge" alt="Seaborn">
+  <img src="https://img.shields.io/badge/Google%20Colab-F9AB00?style=for-the-badge&logo=googlecolab&logoColor=white" alt="Colab">
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Status-Completed-brightgreen?style=flat-square" alt="Status">
+  <img src="https://img.shields.io/badge/Type-Exploratory%20Data%20Analysis-blue?style=flat-square" alt="Type">
+  <img src="https://img.shields.io/badge/Program-VOIS%20For%20Tech%20%7C%20AICTE%20TIRTC-orange?style=flat-square" alt="Program">
+</p>
+
+<p align="center">
+  <a href="#-project-at-a-glance">Overview</a> •
+  <a href="#️-dataset">Dataset</a> •
+  <a href="#-methodology">Methodology</a> •
+  <a href="#-visualizations">Charts</a> •
+  <a href="#-key-findings">Findings</a> •
+  <a href="#-how-to-run">How to Run</a>
+</p>
 
 ---
 
-## Table of Contents
+## 📌 Project at a Glance
 
-1. [Project Overview](#1-project-overview)
-2. [Objectives](#2-objectives)
-3. [Dataset Description](#3-dataset-description)
-4. [Methodology](#4-methodology)
-5. [Data Cleaning](#5-data-cleaning)
-6. [Exploratory Data Analysis (10 Charts)](#6-exploratory-data-analysis-10-charts)
-7. [Key Findings](#7-key-findings)
-8. [Correlation Summary](#8-correlation-summary)
-9. [Conclusion](#9-conclusion)
-10. [Limitations](#10-limitations)
-11. [Project Structure](#11-project-structure)
-12. [How to Run](#12-how-to-run)
+<div align="center">
 
----
+| 👥 Patients | 🧮 Variables | 📊 Charts | 🧹 Missing Values | 🔁 Duplicates |
+|:-----------:|:------------:|:---------:|:-----------------:|:-------------:|
+| **5,190** | **12** | **10** | **0** | **0** |
 
-## 1. Project Overview
+</div>
 
-Hospitals and clinics collect a lot of patient data, but the raw records do not show *why* some people visit a doctor more often than others. This project analyses a healthcare dataset of **5,190 patients** to find which factors are linked to the number of doctor visits.
+Hospitals and clinics collect large amounts of patient data, but raw records do not explain *why* some people visit a doctor far more often than others. This project cleans a healthcare dataset, explores it with 10 visualizations, measures how each variable relates to the number of doctor visits, and turns the results into clear insights.
 
-The work follows a complete data analytics workflow: load the data, check its quality, clean it, explore it with 10 visualizations, measure correlations, and write down the insights. All code runs in Google Colab.
+> 🎓 **Built as part of:** VOIS For Tech, AICTE TIRTC Data Analytics (August Batch, 2026-27) DIY Project
 
-## 2. Objectives
+## 🎯 Objectives
 
-- Load, inspect and clean the healthcare dataset.
-- Understand how doctor visits are distributed across patients.
-- Compare visits across gender, age, income, illness score, chronic conditions and insurance type.
-- Measure which variables are most strongly related to the number of visits.
-- Summarise the findings in a report and a presentation.
+- ✅ Load, inspect and clean the healthcare dataset
+- ✅ Understand how doctor visits are distributed across patients
+- ✅ Compare visits across gender, age, income, illness score, chronic conditions and insurance type
+- ✅ Measure which variables are most strongly related to visits
+- ✅ Present the findings in a report and a presentation
 
-## 3. Dataset Description
+## 🗂️ Dataset
 
 | Item | Value |
 |------|-------|
-| File | `Healthcare_Analytics_for_Doctor_Visits.csv` |
-| Rows | 5,190 patients |
-| Columns | 13 (1 row-index column + **12 variables**) |
-| Missing values | 0 |
-| Duplicate rows | 0 |
-| Target variable | `visits` |
+| 📄 File | `Healthcare_Analytics_for_Doctor_Visits.csv` |
+| 📏 Rows | 5,190 patients |
+| 📐 Columns | 13 (1 row-index column + 12 variables) |
+| 🎯 Target variable | `visits` (number of doctor visits) |
+
+<details>
+<summary><b>📋 Click to see all 12 variables</b></summary>
+<br>
 
 | Variable | Type | Range / Values | Meaning |
 |----------|------|----------------|---------|
@@ -71,78 +83,71 @@ The work follows a complete data analytics workflow: load the data, check its qu
 
 > Variable meanings follow the standard description of this dataset. The first column (`Unnamed: 0`) is only a row index and is dropped during cleaning.
 
-**Basic statistics of `visits`:** mean 0.30, median 0, maximum 9.
+</details>
 
-## 4. Methodology
+## 🔬 Methodology
 
+```mermaid
+flowchart LR
+    A[📥 Load CSV] --> B[🔍 Explore]
+    B --> C[🧹 Clean & Encode]
+    C --> D[📊 10 Visualizations]
+    D --> E[🔗 Correlation]
+    E --> F[💡 Insights & Report]
 ```
-Load CSV  ->  Explore  ->  Clean  ->  10 Charts  ->  Correlation  ->  Insights
-```
 
-1. **Load** the CSV into a Pandas DataFrame.
-2. **Explore** with `head`, `tail`, `shape`, `info`, `describe`, null and duplicate checks.
-3. **Clean** and encode the columns for analysis.
-4. **Visualize** the data with 10 charts (saved as PNG).
-5. **Correlate** every variable with `visits`.
-6. **Summarise** the findings.
+<details>
+<summary><b>🧹 Data cleaning steps</b></summary>
+<br>
 
-## 5. Data Cleaning
+- Dropped the unnecessary row-index column
+- Checked for missing values and duplicate rows (none found)
+- Converted Yes/No columns (`private`, `freepoor`, `freerepat`, `nchronic`, `lchronic`) to 1 / 0
+- Created `gender_encoded` (male = 1, female = 0) for correlation, keeping `gender` for chart labels
+- Created age groups and reduced-activity groups for clearer category charts
+- Saved the result as `Healthcare_Analytics_Cleaned.csv`
 
-- Dropped the unnecessary row-index column (`Unnamed: 0`).
-- Checked for missing values: **none found**.
-- Checked for duplicate rows: **none found**.
-- Converted the Yes/No columns (`private`, `freepoor`, `freerepat`, `nchronic`, `lchronic`) to 1 / 0.
-- Created `gender_encoded` (male = 1, female = 0) for correlation analysis, keeping the original `gender` column for chart labels.
-- Created age groups and reduced-activity groups to make category-wise charts clearer.
-- Saved the cleaned data as `Healthcare_Analytics_Cleaned.csv`.
+</details>
 
-## 6. Exploratory Data Analysis (10 Charts)
+## 📈 Visualizations
 
-### Chart 1: Doctor Visits Distribution
-![Chart 1](charts/chart1.png)
-
+### 1️⃣ Doctor Visits Distribution
+![Chart 1](charts/chart1_visits_distribution.png)
 79.8% of patients had **0 visits**; only 20.2% visited at least once (maximum 9).
 
-### Chart 2: Visits by Gender
-![Chart 2](charts/chart2.png)
-
+### 2️⃣ Visits by Gender
+![Chart 2](charts/chart2_visits_by_gender.png)
 Females average **0.36** visits and males **0.24**. The sample is 52% female (2,702 of 5,190).
 
-### Chart 3: Illness Score vs Visits
-![Chart 3](charts/chart3.png)
-
+### 3️⃣ Illness Score vs Visits
+![Chart 3](charts/chart3_illness_type.png)
 Average visits rise with the illness score, from 0.08 (score 0) to 0.81 (score 5).
 
-### Chart 4: Income vs Visits
-![Chart 4](charts/chart4.png)
-
+### 4️⃣ Income vs Visits
+![Chart 4](charts/chart4_income_vs_visits.png)
 Income has a weak negative link with visits (correlation -0.08).
 
-### Chart 5: Age Groups vs Visits
-![Chart 5](charts/chart5.png)
+### 5️⃣ Age Groups vs Visits
+![Chart 5](charts/chart5_age_groups.png)
+Visits rise with age, from 0.21 in the youngest group to 0.43 in the oldest.
 
-Visits rise with age, from 0.21 in the youngest group to 0.43 in the oldest group.
+### 6️⃣ Chronic Conditions
+![Chart 6](charts/chart6_chronic_conditions.png)
+Patients with a limiting chronic condition average **0.60** visits vs 0.26 without (about 2.3 times). For the non-limiting condition the gap is smaller: 0.35 vs 0.27.
 
-### Chart 6: Chronic Conditions
-![Chart 6](charts/chart6.png)
+### 7️⃣ Insurance Type
+![Chart 7](charts/chart7_insurance_type.png)
+`freerepat` patients average 0.47 visits vs 0.26. `freepoor` patients average 0.16 vs 0.31. Private insurance makes little difference (0.30 vs 0.31).
 
-Patients with a limiting chronic condition average **0.60** visits vs 0.26 without (about 2.3 times). For the non-limiting chronic condition the gap is smaller: 0.35 vs 0.27.
+### 8️⃣ Health Score
+![Chart 8](charts/chart8_health_status.png)
+Health score and visits are positively related (correlation +0.19). The median score is 0.
 
-### Chart 7: Insurance Type
-![Chart 7](charts/chart7.png)
-
-Free-insurance (`freerepat`) patients average 0.47 visits vs 0.26. `freepoor` patients average only 0.16 vs 0.31. Private insurance makes little difference (0.30 vs 0.31).
-
-### Chart 8: Health Score
-![Chart 8](charts/chart8.png)
-
-Health score and visits are positively related (correlation +0.19): a higher score goes with more visits. The median score is 0.
-
-### Chart 9: Reduced Activity Days vs Visits
-![Chart 9](charts/chart9.png)
+### 9️⃣ Reduced Activity Days vs Visits
+![Chart 9](charts/chart9_reduced_activity.png)
 
 | Reduced activity days | Patients | Average visits |
-|-----------------------|----------|----------------|
+|-----------------------|:--------:|:--------------:|
 | 0 days | 4,454 | 0.18 |
 | 1-5 days | 444 | 0.66 |
 | 6-10 days | 91 | 1.33 |
@@ -150,27 +155,28 @@ Health score and visits are positively related (correlation +0.19): a higher sco
 
 Patients with 11 or more reduced-activity days visit about **9 times** as often as those with none.
 
-### Chart 10: Correlation Heatmap
-![Chart 10](charts/chart10.png)
+### 🔟 Correlation Heatmap
+![Chart 10](charts/chart10_correlation_heatmap.png)
+One view of how all variables relate to each other and to `visits`.
 
-A single view of how all variables relate to each other and to `visits`.
+## 💡 Key Findings
 
-## 7. Key Findings
+| # | Finding | Evidence |
+|:-:|---------|----------|
+| 1 | Most patients rarely see a doctor | 79.8% had 0 visits; average 0.30 per person |
+| 2 | 🥇 **Reduced activity days** is the strongest factor | Correlation +0.42; 0.18 to 1.66 visits across groups |
+| 3 | Limiting chronic conditions raise visits | 0.60 vs 0.26 visits (about 2.3x) |
+| 4 | Illness score matters | Average visits rise from 0.08 to 0.81 |
+| 5 | Females visit more than males | 0.36 vs 0.24 visits |
+| 6 | Age and income have a weak effect | Correlations +0.13 and -0.08 |
+| 7 | Insurance groups behave differently | `freerepat` higher, `freepoor` lower, private about the same |
 
-1. **Most patients rarely visit a doctor.** 79.8% had no visits; the average is 0.30 per person.
-2. **Reduced activity days is the strongest factor** linked with visits (correlation +0.42).
-3. **Chronic conditions matter.** Patients with a limiting chronic condition average 0.60 visits vs 0.26.
-4. **Illness score matters.** Average visits go from 0.08 to 0.81 as the score rises from 0 to 5.
-5. **Females visit more than males** in this sample (0.36 vs 0.24).
-6. **Age and income have a weak effect** compared with health-related variables.
-7. **Insurance groups behave differently.** `freerepat` patients visit more, `freepoor` patients visit less, and private insurance shows almost no difference.
-
-## 8. Correlation Summary
-
-Correlation of each variable with `visits` (from the cleaned data):
+<details>
+<summary><b>🔗 Correlation of every variable with <code>visits</code></b></summary>
+<br>
 
 | Variable | Correlation | Strength |
-|----------|-------------|----------|
+|----------|:-----------:|----------|
 | `reduced` | +0.42 | Moderate |
 | `illness` | +0.22 | Weak |
 | `health` | +0.19 | Weak |
@@ -183,20 +189,22 @@ Correlation of each variable with `visits` (from the cleaned data):
 | `income` | -0.08 | Very weak |
 | `gender` (male = 1) | -0.08 | Very weak |
 
-## 9. Conclusion
+</details>
+
+## ✅ Conclusion
 
 Health-related variables, especially **reduced activity days**, the **illness score**, the **health score** and **limiting chronic conditions**, are more closely linked to doctor visits than age, gender or income. A small group of patients with health problems accounts for most of the visits, since about 80% of patients did not visit a doctor at all.
 
-These findings suggest that providers could use simple indicators such as reduced-activity days and chronic-condition status to identify patients who are likely to need more care.
+Providers could use simple indicators such as reduced-activity days and chronic-condition status to identify patients likely to need more care.
 
-## 10. Limitations
+## ⚠️ Limitations
 
-- The analysis shows **association, not cause and effect**.
-- About 80% of the target values are 0, so averages are small and the data is highly skewed.
-- Age and income are scaled values, so their charts show relative rather than exact levels.
-- No prediction model was built; this project is exploratory analysis only.
+- The analysis shows **association, not cause and effect**
+- About 80% of the target values are 0, so averages are small and the data is highly skewed
+- Age and income are scaled values, so charts show relative rather than exact levels
+- No prediction model was built; this project is exploratory analysis only
 
-## 11. Project Structure
+## 📁 Project Structure
 
 ```
 healthcare-analytics-doctor-visits/
@@ -206,24 +214,40 @@ healthcare-analytics-doctor-visits/
 │   ├── Healthcare_Analytics_for_Doctor_Visits.csv # original dataset
 │   └── Healthcare_Analytics_Cleaned.csv           # cleaned dataset
 ├── charts/
-│   └── chart1.png ... chart10.png                 # 10 visualizations
+│   └── chart1_... to chart10_...png               # 10 visualizations
 └── docs/
     ├── Healthcare_Analytics_Presentation.pptx     # project presentation
     └── Healthcare_Analytics_Report.pdf            # project report
 ```
 
-## 12. How to Run
+## 🚀 How to Run
 
-1. Open [Google Colab](https://colab.research.google.com) and upload `Healthcare_Analytics_for_Doctor_Visits.ipynb` (File > Upload notebook).
-2. Upload `data/Healthcare_Analytics_for_Doctor_Visits.csv` using the folder icon on the left.
-3. Make sure the file path in the first code cell matches your uploaded file name:
+1. Open [Google Colab](https://colab.research.google.com) and upload `Healthcare_Analytics_for_Doctor_Visits.ipynb` (**File > Upload notebook**)
+2. Upload `data/Healthcare_Analytics_for_Doctor_Visits.csv` using the folder icon on the left
+3. Check that the path in the first code cell matches your file name:
    ```python
    df = pd.read_csv('/content/Healthcare_Analytics_for_Doctor_Visits.csv')
    ```
-4. Run all cells (Runtime > Run all). The 10 charts and the cleaned CSV are saved in the Colab file panel.
+4. Run all cells (**Runtime > Run all**). The 10 charts and the cleaned CSV are saved in the Colab file panel.
 
-**Libraries:** `pandas`, `numpy`, `matplotlib`, `seaborn` (all pre-installed in Colab).
+## 🛠️ Tech Stack
+
+| Tool | Use |
+|------|-----|
+| 🐍 Python 3 | Programming language |
+| 🐼 Pandas, NumPy | Data loading, cleaning, calculations |
+| 📊 Matplotlib, Seaborn | Charts and heatmap |
+| ☁️ Google Colab | Cloud notebook environment |
+
+## 👤 Author
+
+**Gajanan Harinarayan Raje**
+🎓 TYBCA, MGM's College of Computer Science & IT, Nanded
+🏛️ Swami Ramanand Teerth Marathwada University (SRTMU)
+🔗 GitHub: [@Gajanan-raje](https://github.com/Gajanan-raje)
 
 ---
 
-**Author:** Gajanan Harinarayan Raje | TYBCA, MGM's College of Computer Science & IT, Nanded
+<p align="center">
+  <sub>Built with 🐍 Python | VOIS For Tech DIY Project | 2026-27</sub>
+</p>
