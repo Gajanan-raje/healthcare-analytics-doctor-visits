@@ -99,12 +99,12 @@ Load CSV  ->  Explore  ->  Clean  ->  10 Charts  ->  Correlation  ->  Insights
 ## 6. Exploratory Data Analysis (10 Charts)
 
 ### Chart 1: Doctor Visits Distribution
-![Chart 1](charts/chart1.png)
+![charts/chart1.png
 
 79.8% of patients had **0 visits**; only 20.2% visited at least once (maximum 9).
 
 ### Chart 2: Visits by Gender
-![Chart 2](charts/chart2.png)
+!(charts/chart2.png)
 
 Females average **0.36** visits and males **0.24**. The sample is 52% female (2,702 of 5,190).
 
